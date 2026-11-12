@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import {
   ChevronLeft,
   ChevronRight,
-  ExternalLink,
   ListMusic,
   Music2,
   Pause,
@@ -11,7 +10,7 @@ import {
   Volume2,
   X,
 } from 'lucide-react'
-import { musicTracks, radioStations, youtubePlaylistUrl } from '../data/audioLibrary'
+import { musicTracks, radioStations } from '../data/audioLibrary'
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00'
@@ -294,16 +293,6 @@ export default function AudioPlayer() {
               ))}
           </div>
 
-          {mode === 'radio' && (
-            <a
-              className="audio-panel__external"
-              href={youtubePlaylistUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open the YouTube playlist <ExternalLink size={13} />
-            </a>
-          )}
           {error && <p className="audio-panel__error" role="status">{error}</p>}
 
         </section>
