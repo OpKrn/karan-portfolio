@@ -284,7 +284,7 @@ export default function AudioPlayer() {
                 <button
                   className={`audio-panel__list-item${mode === 'radio' && stationIndex === index ? ' is-playing' : ''}`}
                   type="button"
-                  key={station.url}
+                  key={`${station.name}-${station.url}`}
                   onClick={() => playStation(index)}
                 >
                   <span>{String(index + 1).padStart(2, '0')}</span>
