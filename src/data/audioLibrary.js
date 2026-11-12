@@ -22,11 +22,11 @@ export const radioStations = [
     url: 'https://server.mixify.in/listen/new_hits/radio.mp3',
     style: 'Popular music',
   },
-  {
-    name: 'Mixify · New Hits',
-    url: 'https://server.mixify.in/listen/new_hits/radio.mp3',
-    style: 'Popular music',
-  },
+  // {
+  //   name: 'Mixify · New Hits',
+  //   url: 'https://server.mixify.in/listen/new_hits/radio.mp3',
+  //   style: 'Popular music',
+  // },
   {
     name: 'Zeno Radio',
     url: 'https://stream.zeno.fm/s4e0u5bqhtzuv',
