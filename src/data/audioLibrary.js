@@ -17,6 +17,11 @@ export const radioStations = [
     url: 'https://radio.musicradio.ai/listen/music_radio_lo-fi/radio.mp3',
     style: 'Lo-fi',
   },
+   {
+    name: 'Mixify · Hindi Radio',
+    url: 'https://server.mixify.in/listen/new_hits/radio.mp3',
+    style: 'Popular music',
+  },
   {
     name: 'Mixify · New Hits',
     url: 'https://server.mixify.in/listen/new_hits/radio.mp3',
@@ -39,5 +44,5 @@ export const radioStations = [
   },
 ]
 
-export const youtubePlaylistUrl =
-  'https://youtube.com/playlist?list=PLUge_o9AIFp4HuA-A3e3ZqENh63LuRRlQ'
+// export const youtubePlaylistUrl =
+//   'https://youtube.com/playlist?list=PLUge_o9AIFp4HuA-A3e3ZqENh63LuRRlQ'
