@@ -22,7 +22,7 @@ Edit [`src/data/portfolio.js`](./src/data/portfolio.js) to update the profile, s
 
 The contact section uses `profile.email` to open a pre-addressed Gmail compose window; update `profile.links` to change social URLs. Empty social links are shown as pending rather than linking to invented destinations. Add each hosted project URL to its `demoUrl` to make its artwork, title, and live-demo action open the project; `repositoryUrl` controls its GitHub action. AI Controller, Truth or Dare, and Flappy Meme Game currently link to hosted pages. Replace the experience descriptions and dates with verified details.
 
-The theme is switchable from the navigation and saved in the browser. GSAP reveals, parallax, and the continuously rotating contact orbits are disabled for visitors who prefer reduced motion.
+The theme is switchable from the navigation and saved in the browser. The header music player starts with the lo-fi radio stream selected and attempts playback on page load; browser autoplay restrictions may require the visitor to press play. The radio list appears before the bundled browser-compatible MP3 library in `src/assets/music-mp3/`, and the YouTube playlist opens on YouTube. GSAP reveals, parallax, and the orbiting hero ideas/contact rings respect reduced-motion preferences.
 
 ## Deploy
 

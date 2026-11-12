@@ -33,7 +33,10 @@ function App() {
   return (
     <div className="site-shell min-h-screen" ref={pageRef}>
       <CursorFollower />
-      <SiteNav theme={theme} onThemeChange={setTheme} />
+      <SiteNav
+        theme={theme}
+        onThemeChange={setTheme}
+      />
       <main>
         <Hero />
         <About />

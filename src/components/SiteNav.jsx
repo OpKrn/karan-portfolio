@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react'
+import AudioPlayer from './AudioPlayer'
 import { navigation, profile } from '../data/portfolio'
 
 export default function SiteNav({ theme, onThemeChange }) {
@@ -14,16 +15,6 @@ export default function SiteNav({ theme, onThemeChange }) {
       <a className="wordmark" href="#home" aria-label="Karan — back to top" onClick={closeMenu}>
         K<span>.</span>
       </a>
-      <button
-        className="mobile-menu-toggle"
-        type="button"
-        aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
-        aria-expanded={menuOpen}
-        aria-controls="primary-navigation"
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        {menuOpen ? <X size={20} /> : <Menu size={20} />}
-      </button>
       <nav
         className={`site-nav${menuOpen ? ' site-nav--open' : ''}`}
         id="primary-navigation"
@@ -59,6 +50,19 @@ export default function SiteNav({ theme, onThemeChange }) {
           Let’s talk <ArrowUpRight size={15} aria-hidden="true" />
         </a>
       </nav>
+      <div className="site-header__controls">
+        <AudioPlayer />
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
     </header>
   )
 }

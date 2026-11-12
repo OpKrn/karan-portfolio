@@ -77,29 +77,6 @@ export default function usePortfolioMotion(containerRef) {
           },
         })
 
-        gsap.to('.contact-orbit__ring--outer', {
-          rotation: 360,
-          duration: 48,
-          repeat: -1,
-          ease: 'none',
-          transformOrigin: '50% 50%',
-        })
-
-        gsap.to('.contact-orbit__ring--middle', {
-          rotation: -360,
-          duration: 34,
-          repeat: -1,
-          ease: 'none',
-          transformOrigin: '50% 50%',
-        })
-
-        gsap.to('.contact-orbit__ring--inner', {
-          rotation: 360,
-          duration: 24,
-          repeat: -1,
-          ease: 'none',
-          transformOrigin: '50% 50%',
-        })
       }, containerRef)
 
       return () => context.revert()

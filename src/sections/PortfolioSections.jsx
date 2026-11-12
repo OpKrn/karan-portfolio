@@ -1,6 +1,16 @@
-import { ArrowDownRight, ArrowUpRight, MapPin } from 'lucide-react'
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  BrainCircuit,
+  Code2,
+  Lightbulb,
+  MapPin,
+  Palette,
+  Sparkles,
+} from 'lucide-react'
 import ProjectCard from '../components/ProjectCard'
 import SectionIntro from '../components/SectionIntro'
+import portraitImage from '../assets/karan-portrait.png'
 import {
   experience,
   expertise,
@@ -26,6 +36,22 @@ function getGmailComposeUrl(email) {
   return `https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(email)}`
 }
 
+function ProfileOrbit({ className, showPortrait = true }) {
+  return (
+    <div className={className} aria-hidden="true">
+      <span className="profile-orbit__ring profile-orbit__ring--outer" />
+      <span className="profile-orbit__ring profile-orbit__ring--middle" />
+      <span className="profile-orbit__ring profile-orbit__ring--inner" />
+      {showPortrait && <img src={portraitImage} alt="" />}
+      <span className="profile-orbit__idea profile-orbit__idea--code"><Code2 size={15} /></span>
+      <span className="profile-orbit__idea profile-orbit__idea--brain"><BrainCircuit size={15} /></span>
+      <span className="profile-orbit__idea profile-orbit__idea--palette"><Palette size={15} /></span>
+      <span className="profile-orbit__idea profile-orbit__idea--light"><Lightbulb size={15} /></span>
+      <span className="profile-orbit__idea profile-orbit__idea--spark"><Sparkles size={14} /></span>
+    </div>
+  )
+}
+
 export function Hero() {
   return (
     <section className="hero page-gutter" id="home" aria-labelledby="hero-title">
@@ -44,7 +70,12 @@ export function Hero() {
             <span className="hero-graphic__orbit hero-graphic__orbit--one" />
             <span className="hero-graphic__orbit hero-graphic__orbit--two" />
             <span className="hero-graphic__orbit hero-graphic__orbit--three" />
-            <span className="hero-graphic__core">K</span>
+            <img className="hero-graphic__core" src={portraitImage} alt="" />
+            <span className="hero-idea hero-idea--code"><Code2 size={16} /></span>
+            <span className="hero-idea hero-idea--brain"><BrainCircuit size={16} /></span>
+            <span className="hero-idea hero-idea--palette"><Palette size={16} /></span>
+            <span className="hero-idea hero-idea--light"><Lightbulb size={16} /></span>
+            <span className="hero-idea hero-idea--spark"><Sparkles size={15} /></span>
             <span className="hero-graphic__cross hero-graphic__cross--one" />
             <span className="hero-graphic__cross hero-graphic__cross--two" />
             <span className="hero-graphic__legend">IDEAS IN MOTION <b>↗</b></span>
@@ -86,7 +117,9 @@ export function About() {
       />
       <div className="about-grid">
         <div className="about-aside reveal">
-          <span className="about-aside__mark" aria-hidden="true">K<span>↗</span></span>
+          <img className="about-aside__portrait" src={portraitImage} alt="" />
+          <span className="about-aside__scrim" aria-hidden="true" />
+          <ProfileOrbit className="profile-orbit profile-orbit--about" showPortrait={false} />
           <p>Computer Science<br />Engineering Student</p>
           <span className="about-aside__coordinates">23°N / 87°E</span>
         </div>
@@ -150,7 +183,7 @@ export function Experience() {
         number="05"
         eyebrow="THE PATH SO FAR"
         title={<>Learning by<br />doing the work.</>}
-        description="Experience is a practice: building, collaborating, reflecting, and trying again."
+        description="A living timeline of what I’ve learned, built, and taken part in. More details will be added as my experience grows."
       />
       <div className="experience-list">
         {experience.map((item) => (
@@ -240,10 +273,7 @@ export function Contact() {
         </div>
       </div>
       <div className="contact-orbit" aria-hidden="true">
-        <span className="contact-orbit__ring contact-orbit__ring--outer" />
-        <span className="contact-orbit__ring contact-orbit__ring--middle" />
-        <span className="contact-orbit__ring contact-orbit__ring--inner" />
-        <b>K</b>
+        <ProfileOrbit className="profile-orbit profile-orbit--contact" />
       </div>
     </section>
   )
