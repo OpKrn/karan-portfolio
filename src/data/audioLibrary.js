@@ -1,4 +1,4 @@
-const localTracks = import.meta.glob('../assets/music-mp3/*.{mp3,m4a,mp4}', {
+const localTracks = import.meta.glob('../assets/music-mp3/*.mp3', {
   eager: true,
   import: 'default',
   query: '?url',
@@ -6,7 +6,7 @@ const localTracks = import.meta.glob('../assets/music-mp3/*.{mp3,m4a,mp4}', {
 
 export const musicTracks = Object.entries(localTracks)
   .map(([path, src]) => ({
-    title: decodeURIComponent(path.split('/').pop()).replace(/\.(mp3|m4a|mp4)$/i, ''),
+    title: decodeURIComponent(path.split('/').pop()).replace(/\.mp3$/i, ''),
     src,
   }))
   .sort((first, second) => first.title.localeCompare(second.title))
@@ -22,11 +22,12 @@ export const radioStations = [
     url: 'https://radio.musicradio.ai/listen/music_radio_lo-fi/radio.mp3',
     style: 'Lo-fi',
   },
-  {
+   {
     name: 'Mixify · Hindi Radio',
     url: 'https://server.mixify.in/listen/new_hits/radio.mp3',
     style: 'Popular music',
   },
+  
   {
     name: 'Zeno Radio',
     url: 'https://stream.zeno.fm/s4e0u5bqhtzuv',
